@@ -22,7 +22,7 @@ export default function UserList() {
   }, []);
 
   async function fetchData(current) {
-    const res = await fetchAsGet(API.USER.GET);
+    const res = await fetchAsGet("http://localhost:12346/users");
     if (current && res.isOk) {
       setUsers(res.data.data);
       setTotalPage(res.data.total);
@@ -45,11 +45,10 @@ export default function UserList() {
         </thead>
         <tbody>
           {
-            users && users.map((item, idx) =>
-              <tr key={idx}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
+              <tr>
+                <td>{users.id}</td>
+                <td>{users.name}</td>
+                <td>{users.email}</td>
                 <td>Waiting</td>
                 <td className='d-flex justify-content-around'>
                   <button type="button" className="btn btn-outline-success btn-sm mx-2">Publish</button>
@@ -57,7 +56,6 @@ export default function UserList() {
                   <button type="button" className="btn btn-outline-danger btn-sm mx-2">Delete</button>
                 </td>
               </tr>
-            )
           }
         </tbody>
       </table>

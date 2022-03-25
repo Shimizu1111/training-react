@@ -1,0 +1,19 @@
+{
+  "users": 
+    {
+    "isOk": true,
+    "data":
+      {
+          "id": 1,
+          "name": "Admin",
+          "email": "admin@gmail.com",
+          "email_verified_at": "2022-03-03T17:11:16.000000Z",
+          "created_at": "2022-03-03T17:11:16.000000Z",
+          "updated_at": "2022-03-03T17:11:16.000000Z"
+      },
+    "total": 3,
+    "isInvalid":true,
+    "status": 0
+  }
+}
+
